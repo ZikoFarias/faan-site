@@ -80,7 +80,7 @@ document.getElementById('briefing-form').addEventListener('submit',function(even
  let target=null,current=null,frame=0,last=0;
  function animate(time){
   const dt=Math.min(64,time-last||16);last=time;
-  const blend=1-Math.exp(-dt/130);
+  const blend=1-Math.exp(-dt/320);
   current.x+=(target.x-current.x)*blend;current.y+=(target.y-current.y)*blend;
   root.style.setProperty('--light-x',current.x+'px');root.style.setProperty('--light-y',current.y+'px');
   if(Math.hypot(target.x-current.x,target.y-current.y)>.2)frame=requestAnimationFrame(animate);else frame=0;
